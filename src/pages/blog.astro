@@ -1,5 +1,18 @@
-<a href="/">Go back to Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+---
+import BlogPost from "../components/BlogPost.astro";
+import Layout from "../layouts/Layout.astro";
+const pageTitle = "Education Topics";
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+);
+---
 
-<h1>Blog</h1>
+<Layout pageTitle={pageTitle}>
+  <ul>
+    {
+      allPosts.map((post: any) => (
+        <BlogPost url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+</Layout>

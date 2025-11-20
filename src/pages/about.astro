@@ -1,9 +1,22 @@
-<a href="/">Go back to Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+---
+const pageTitle = "About Us";
 
-<h1>About Us</h1>
-<p>
-  Welcome to the about page of our website. Here you can learn more about our
-  mission and values.
-</p>
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+import Layout from "../layouts/Layout.astro";
+import Calendar from "../components/Calendar.astro";
+---
+
+<Layout pageTitle={pageTitle}>
+  <p>
+    Welcome to the about page of our website. Here you can learn more about our
+    mission and values.
+  </p>
+</Layout>
+<Calendar />

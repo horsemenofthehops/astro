@@ -1,15 +1,12 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
 import Layout from "../layouts/Layout.astro";
+const pageTitle = "Home Page";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<a href="/">Go back to Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
-
-<Layout>
-	<Welcome />
-</Layout>
+<Layout pageTitle={pageTitle} />
