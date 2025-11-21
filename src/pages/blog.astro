@@ -1,17 +1,16 @@
 ---
+import { getCollection } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
 import Layout from "../layouts/Layout.astro";
 const pageTitle = "Education Topics";
-const allPosts = Object.values(
-  import.meta.glob("./posts/*.md", { eager: true }),
-);
+const allPosts = await getCollection("blog");
 ---
 
 <Layout pageTitle={pageTitle}>
   <ul>
     {
       allPosts.map((post: any) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
       ))
     }
   </ul>
